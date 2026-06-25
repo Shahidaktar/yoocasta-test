@@ -4,7 +4,8 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* --font-mono: "JetBrains Mono", monospace; */
+  --font-mono:  "Inter", ui-sans-serif, system-ui, sans-serif;
   
   --color-gold-50: #fefbeb;
   --color-gold-100: #fef3c7;
