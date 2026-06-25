@@ -27,7 +27,7 @@ export default function Header({
   return (
     <header className="sticky top-0 z-40 w-full border-b border-neutral-200/50 bg-white/90 backdrop-blur-md shadow-sm">
       {/* Marquee Banner */}
-      <div className="w-full bg-amber-500 py-3 overflow-hidden select-none relative z-20 border-b border-white/10">
+      <div className="w-full bg-[#dbaf5b] py-3 overflow-hidden select-none relative z-20 border-b border-white/10">
         <div className="flex whitespace-nowrap animate-marquee gap-12 text-[10px] uppercase font-mono font-black tracking-[0.2em] text-neutral-400">
           <div className="flex items-center gap-12 shrink-0">
             <span className="text-white">✦ LIVE AUDITIONS OPEN: DUBAI DESIGN DISTRICT</span>
@@ -95,7 +95,7 @@ export default function Header({
 
           <button
             onClick={onPostCastingClick}
-            className="inline-flex items-center gap-1 rounded-full bg-amber-400 px-4 py-2 text-xs font-bold text-neutral-950 hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-md shadow-amber-400/10 cursor-pointer"
+            className="inline-flex items-center gap-1 rounded-full bg-[#B58E43] px-4 py-2 text-xs font-bold text-white hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-md shadow-amber-400/10 cursor-pointer"
           >
             <span>Post Casting</span>
           </button>
@@ -174,7 +174,7 @@ export default function Header({
             onClick={() => { toggleMenu(); onCreateProfileClick(); }}
             className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-neutral-950 py-4 text-sm font-bold text-amber-400 hover:bg-neutral-900 shadow-xl transition-all"
           >
-            <Plus className="h-4 w-4 text-amber-400" />
+            <Plus className="h-4 w-4 text-[#B58E43]" />
             <span>Join Talent</span>
           </button>
 

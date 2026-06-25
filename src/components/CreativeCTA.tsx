@@ -26,7 +26,7 @@ export default function CreativeCTA({
   ];
 
   return (
-    <section id="creative-cta" className="w-full bg-amber-500 py-32 relative overflow-hidden border-t border-amber-600/20 text-white">
+    <section id="creative-cta" className="w-full bg-[#B58E43] py-32 relative overflow-hidden border-t border-amber-600/20 text-white">
       
       {/* 1. INFINITE RUNNING TEXT TICKERS IN BACKGROUND */}
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col gap-10 pointer-events-none select-none z-0 opacity-15">

@@ -31,7 +31,7 @@ export default function FAQSection() {
               </div>
               <h2 className="font-display text-4xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
                 Got questions? <br />
-                <span className="text-amber-600">We have answers.</span>
+                <span className="text-[#B58E43]">We have answers.</span>
               </h2>
               <p className="text-sm text-neutral-500 leading-relaxed font-medium max-w-md">
                 Everything you need to know about GCC auditions, portfolio setups, premium memberships, and zero-fee corporate talent booking workflows.
@@ -43,7 +43,7 @@ export default function FAQSection() {
               <div className="absolute -right-8 -bottom-8 h-28 w-28 rounded-full bg-amber-400/[0.04] filter blur-xl group-hover:bg-amber-400/[0.08] transition-all duration-500" />
               
               <div className="flex items-center gap-3.5 mb-5">
-                <div className="h-10 w-10 rounded-xl bg-white border border-neutral-200 flex items-center justify-center text-amber-600 shadow-xs">
+                <div className="h-10 w-10 rounded-xl bg-white border border-neutral-200 flex items-center justify-center text-[#B58E43] shadow-xs">
                   <MessageSquare className="h-4.5 w-4.5" />
                 </div>
                 <div>
