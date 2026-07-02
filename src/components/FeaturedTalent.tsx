@@ -63,11 +63,11 @@ export default function FeaturedTalent({
     <div 
       id="talents-anchor" 
       ref={containerRef}
-      className="bg-neutral-50/50 py-24 border-b border-[#edeaea] relative overflow-hidden"
+      className="bg-neutral-50/50 py-24 border-b border-[#f2f2f2] relative overflow-hidden"
     >
       {/* Exquisite ambient lights */}
-      <div className="absolute left-0 top-1/4 h-96 w-96 rounded-full bg-amber-500/[0.015] filter blur-[120px] pointer-events-none" />
-      <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-neutral-900/[0.01] filter blur-[120px] pointer-events-none" />
+      <div className="absolute left-0 top-1/4 h-96 w-96 rounded-full bg-[#3835A4]/[0.035] filter blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 bottom-1/4 h-96 w-96 rounded-full bg-[#C6007E]/[0.025] filter blur-[120px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -75,7 +75,7 @@ export default function FeaturedTalent({
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-10 pb-10 border-b border-neutral-200/80">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-neutral-800 font-mono font-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-ping" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3835A4] animate-ping" />
               CURATED ROSTER // ACTIVE AUDITIONS
             </div>
             <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
@@ -104,7 +104,7 @@ export default function FeaturedTalent({
                     {isSelected && (
                       <motion.div
                         layoutId="activeGenderPill"
-                        className="absolute inset-0 bg-neutral-900 rounded-lg -z-10 shadow-sm"
+                        className="absolute inset-0 bg-gradient-to-r from-[#C6007E] to-[#3835A4] rounded-lg -z-10 shadow-sm"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -152,12 +152,12 @@ export default function FeaturedTalent({
                           }}
                           className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between cursor-pointer ${
                             selectedLocation === opt.value
-                              ? 'bg-amber-400/10 text-amber-900 font-black'
+                              ? 'bg-[#3835A4]/10 text-[#3835A4] font-black'
                               : 'text-neutral-700 hover:bg-neutral-50'
                           }`}
                         >
                           <span>{opt.label}</span>
-                          {selectedLocation === opt.value && <div className="h-1.5 w-1.5 rounded-full bg-amber-500" />}
+                          {selectedLocation === opt.value && <div className="h-1.5 w-1.5 rounded-full bg-[#3835A4]" />}
                         </button>
                       ))}
                     </motion.div>
@@ -176,9 +176,9 @@ export default function FeaturedTalent({
                   onGenderChange('All');
                   onLocationChange('All Locations');
                 }}
-                className="text-xs text-neutral-900 hover:text-amber-700 transition-colors px-3 py-2.5 font-bold flex items-center gap-1.5 border border-dashed border-neutral-300 rounded-xl hover:border-amber-400 bg-neutral-50 cursor-pointer"
+                className="text-xs text-neutral-900 hover:text-[#3835A4] transition-colors px-3 py-2.5 font-bold flex items-center gap-1.5 border border-dashed border-neutral-300 rounded-xl hover:border-[#3835A4] bg-neutral-50 cursor-pointer"
               >
-                <RefreshCw className="h-3 w-3 animate-spin-slow text-amber-600" />
+                <RefreshCw className="h-3 w-3 animate-spin-slow text-[#3835A4]" />
                 Reset Filters
               </motion.button>
             )}
@@ -196,8 +196,8 @@ export default function FeaturedTalent({
               exit={{ opacity: 0, y: -20 }}
               className="text-center py-24 bg-white border border-dashed border-neutral-200/80 rounded-[2rem] shadow-sm max-w-3xl mx-auto"
             >
-              <div className="h-14 w-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-6">
-                <Star className="h-7 w-7 text-amber-500 animate-pulse" />
+              <div className="h-14 w-14 rounded-2xl bg-[#3835A4]/10 flex items-center justify-center mx-auto mb-6">
+                <Star className="h-7 w-7 text-[#3835A4] animate-pulse" />
               </div>
               <h3 className="font-display text-xl font-black text-neutral-950">No talents found matching the criteria</h3>
               <p className="text-sm text-neutral-500 mt-2 max-w-md mx-auto leading-relaxed">
@@ -239,7 +239,7 @@ export default function FeaturedTalent({
                     style={{ contentVisibility: 'auto' }}
                   >
                     {/* Hair-thin Luxury Card Frame Accent Overlay */}
-                    <div className="absolute inset-3 border border-white/10 rounded-[1.75rem] pointer-events-none z-20 transition-all duration-500 group-hover:inset-2.5 group-hover:border-amber-400/35" />
+                    <div className="absolute inset-3 border border-white/10 rounded-[1.75rem] pointer-events-none z-20 transition-all duration-500 group-hover:inset-2.5 group-hover:border-[#C6007E]/35" />
 
                     {/* Image with high fashion focal filter */}
                     <div className="absolute inset-0 h-full w-full">
@@ -258,8 +258,8 @@ export default function FeaturedTalent({
                     {/* Top metadata tags */}
                     <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-30">
                       {talent.isPremium ? (
-                        <div className="inline-flex items-center gap-1.5 bg-amber-400 text-neutral-950 text-[9px] uppercase font-mono font-black tracking-[0.2em] px-3.5 py-1.5 rounded-xl shadow-lg shadow-amber-400/20">
-                          <Star className="h-3 w-3 fill-current text-neutral-950 animate-pulse" />
+                        <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white text-[9px] uppercase font-mono font-black tracking-[0.2em] px-3.5 py-1.5 rounded-xl shadow-lg shadow-[#3835A4]/20">
+                          <Star className="h-3 w-3 fill-current text-white animate-pulse" />
                           <span>PREMIUM</span>
                         </div>
                       ) : (
@@ -283,14 +283,14 @@ export default function FeaturedTalent({
                           {/* Talent Category tags */}
                           <div className="flex flex-wrap gap-1.5">
                             {talent.categories.slice(0, 2).map((cat, idx) => (
-                              <span key={idx} className="text-[9px] uppercase font-mono tracking-widest font-black text-amber-400 px-2 py-0.5 bg-amber-400/10 rounded-md border border-amber-400/20">
+                              <span key={idx} className="text-[9px] uppercase font-mono tracking-widest font-black text-[#C6007E] px-2 py-0.5 bg-[#C6007E]/10 rounded-md border border-[#C6007E]/20">
                                 {cat}
                               </span>
                             ))}
                           </div>
 
                           {/* Beautiful display heading */}
-                          <h3 className="font-display text-2xl sm:text-3xl font-black text-white group-hover:text-amber-300 transition-colors tracking-tight leading-none">
+                          <h3 className="font-display text-2xl sm:text-3xl font-black text-white group-hover:text-[#C6007E] transition-colors tracking-tight leading-none">
                             {talent.name}
                           </h3>
 
@@ -302,7 +302,7 @@ export default function FeaturedTalent({
                         </div>
 
                         {/* Interactive dynamic visual action circle */}
-                        <div className="p-4 rounded-2xl bg-white text-neutral-900 group-hover:bg-amber-400 group-hover:text-neutral-950 transition-all duration-300 shadow-xl scale-90 group-hover:scale-100 shrink-0 border border-neutral-100">
+                        <div className="p-4 rounded-2xl bg-white text-neutral-900 group-hover:bg-[#3835A4] group-hover:text-white transition-all duration-300 shadow-xl scale-90 group-hover:scale-100 shrink-0 border border-neutral-100">
                           <Eye className="h-5 w-5" />
                         </div>
                       </div>
@@ -312,15 +312,15 @@ export default function FeaturedTalent({
                         <div className="grid grid-cols-3 gap-4 text-center">
                           <div className="space-y-0.5">
                             <p className="text-[8px] text-neutral-400 uppercase font-mono tracking-wider">Shoe Size</p>
-                            <p className="text-xs font-black text-amber-100 font-mono">{talent.stats.shoeSize || 'N/A'} EU</p>
+                            <p className="text-xs font-black text-white font-mono">{talent.stats.shoeSize || 'N/A'} EU</p>
                           </div>
                           <div className="space-y-0.5">
                             <p className="text-[8px] text-neutral-400 uppercase font-mono tracking-wider">Hair Color</p>
-                            <p className="text-xs font-black text-amber-100 font-mono">{talent.stats.hairColor}</p>
+                            <p className="text-xs font-black text-white font-mono">{talent.stats.hairColor}</p>
                           </div>
                           <div className="space-y-0.5">
                             <p className="text-[8px] text-neutral-400 uppercase font-mono tracking-wider">Waistline</p>
-                            <p className="text-xs font-black text-amber-100 font-mono">{talent.stats.waist || 'N/A'} CM</p>
+                            <p className="text-xs font-black text-white font-mono">{talent.stats.waist || 'N/A'} CM</p>
                           </div>
                         </div>
                       </div>
@@ -335,11 +335,11 @@ export default function FeaturedTalent({
               <div className="w-full h-[2px] bg-neutral-200/60 rounded-full overflow-hidden relative">
                 <motion.div 
                   style={{ scaleX: smoothProgress, transformOrigin: "left" }}
-                  className="absolute inset-y-0 left-0 right-0 bg-amber-500"
+                  className="absolute inset-y-0 left-0 right-0 bg-[#3835A4]"
                 />
               </div>
               <span className="text-[9px] font-mono tracking-[0.25em] text-neutral-400 uppercase font-black flex items-center gap-1.5">
-                <Sparkles className="h-3 w-3 text-amber-500 animate-pulse" />
+                <Sparkles className="h-3 w-3 text-[#C6007E] animate-pulse" />
                 Runway Scroll-Linked Parallax
               </span>
             </div>

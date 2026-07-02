@@ -33,11 +33,11 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
   });
 
   return (
-    <div id="directors-board" className="w-full bg-white py-28 relative overflow-hidden border-b border-[#edeaea]">
+    <div id="directors-board" className="w-full bg-white py-28 relative overflow-hidden border-b border-[#f2f2f2]">
       
       {/* Editorial Luxury Accents */}
-      <div className="absolute right-0 top-1/4 h-80 w-80 rounded-full bg-amber-400/[0.02] filter blur-[120px] pointer-events-none" />
-      <div className="absolute left-10 bottom-10 h-80 w-80 rounded-full bg-emerald-400/[0.015] filter blur-[100px] pointer-events-none" />
+      <div className="absolute right-0 top-1/4 h-80 w-80 rounded-full bg-[#3835A4]/[0.035] filter blur-[120px] pointer-events-none" />
+      <div className="absolute left-10 bottom-10 h-80 w-80 rounded-full bg-[#C6007E]/[0.025] filter blur-[100px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -46,7 +46,7 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-10 pb-10 border-b border-neutral-200/80">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-neutral-800 font-mono font-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-neutral-900 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#3835A4] animate-pulse" />
               HOT BRIEF BULLETINS
             </div>
             <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
@@ -62,13 +62,13 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
             <button
               onClick={() => setActiveBoard('Opportunities')}
               className={`relative px-5 py-3 text-xs font-black rounded-xl tracking-wider transition-colors duration-300 z-10 cursor-pointer ${
-                activeBoard === 'Opportunities' ? 'text-white' : 'text-neutral-500 hover:text-neutral-900'
+                activeBoard === 'Opportunities' ? 'text-white' : 'text-neutral-500 hover:text-[#3835A4]'
               }`}
             >
               {activeBoard === 'Opportunities' && (
                 <motion.div
                   layoutId="activeCastingTab"
-                  className="absolute inset-0 bg-neutral-900 rounded-xl -z-10 shadow-md"
+                  className="absolute inset-0 bg-gradient-to-r from-[#C6007E] to-[#3835A4] rounded-xl -z-10 shadow-md"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
@@ -77,13 +77,13 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
             <button
               onClick={() => setActiveBoard('Crew')}
               className={`relative px-5 py-3 text-xs font-black rounded-xl tracking-wider transition-colors duration-300 z-10 cursor-pointer ${
-                activeBoard === 'Crew' ? 'text-white' : 'text-neutral-500 hover:text-neutral-900'
+                activeBoard === 'Crew' ? 'text-white' : 'text-neutral-500 hover:text-[#3835A4]'
               }`}
             >
               {activeBoard === 'Crew' && (
                 <motion.div
                   layoutId="activeCastingTab"
-                  className="absolute inset-0 bg-neutral-900 rounded-xl -z-10 shadow-md"
+                  className="absolute inset-0 bg-gradient-to-r from-[#C6007E] to-[#3835A4] rounded-xl -z-10 shadow-md"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
@@ -130,7 +130,7 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     onClick={() => onCastingClick(casting)}
-                    className="bg-white flex flex-col rounded-[2.25rem] overflow-hidden border border-neutral-200 hover:border-neutral-900/40 hover:shadow-2xl transition-all duration-500 cursor-pointer h-full group relative"
+                    className="bg-white flex flex-col rounded-[2.25rem] overflow-hidden border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 cursor-pointer h-full group relative"
                     style={{ contentVisibility: 'auto' }}
                   >
                     {/* Visual Card Cover */}
@@ -151,14 +151,14 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
                         <span className="bg-white/95 backdrop-blur-md text-neutral-900 text-[9px] font-mono font-black tracking-[0.15em] uppercase px-3.5 py-1.5 rounded-xl shadow-md border border-neutral-200/50">
                           {casting.category}
                         </span>
-                        <span className="bg-neutral-900 text-amber-400 text-[9px] font-mono font-black tracking-[0.15em] px-3.5 py-1.5 rounded-xl border border-white/10 shadow-lg">
+                        <span className="bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white text-[9px] font-mono font-black tracking-[0.15em] px-3.5 py-1.5 rounded-xl border border-white/10 shadow-lg">
                           {casting.paymentType.toUpperCase()}
                         </span>
                       </div>
 
                       {/* Expiry / Urgency counter */}
                       <div className="absolute bottom-5 left-5 z-10 flex items-center gap-1.5 text-[9px] font-mono text-neutral-200 bg-neutral-950/80 backdrop-blur-md py-2 px-3.5 rounded-xl border border-white/10 shadow-sm font-bold">
-                        <Clock className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
+                        <Clock className="h-3.5 w-3.5 text-[#C6007E] animate-pulse" />
                         <span>{isExpired ? 'REGISTRATION CLOSED' : `EXPIRES IN ${daysLeft} DAYS`}</span>
                       </div>
                     </div>
@@ -175,7 +175,7 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
                         </div>
 
                         {/* Campaign Title */}
-                        <h3 className="font-display text-xl sm:text-2xl font-black text-neutral-900 group-hover:text-amber-800 transition-colors tracking-tight line-clamp-1 leading-tight">
+                        <h3 className="font-display text-xl sm:text-2xl font-black text-neutral-900 group-hover:text-[#3835A4] transition-colors tracking-tight line-clamp-1 leading-tight">
                           {casting.title}
                         </h3>
 
@@ -200,11 +200,11 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
 
                         {/* Compensation Element */}
                         <div className="flex items-start gap-3.5 group/meta">
-                          <div className="h-9 w-9 rounded-xl bg-amber-50 border border-amber-200/50 flex items-center justify-center text-amber-600 shrink-0 group-hover/meta:border-amber-400 transition-colors">
+                          <div className="h-9 w-9 rounded-xl bg-[#3835A4]/5 border border-[#3835A4]/10 flex items-center justify-center text-[#3835A4] shrink-0 group-hover/meta:border-[#3835A4] transition-colors">
                             <DollarSign className="h-4 w-4" />
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-[8px] uppercase tracking-[0.2em] font-mono text-amber-600 font-bold block">GUARANTEED COMPENSATION</span>
+                            <span className="text-[8px] uppercase tracking-[0.2em] font-mono text-[#3835A4] font-bold block">GUARANTEED COMPENSATION</span>
                             <span className="text-xs text-neutral-950 font-black font-mono tracking-wide">{casting.rate}</span>
                           </div>
                         </div>
@@ -213,17 +213,17 @@ export default function CastingCallsSection({ castings, onCastingClick }: Castin
                       {/* Outstanding tactile footer call-to-action */}
                       <div className="pt-6 mt-6 border-t border-dashed border-neutral-200 flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
-                          <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#C6007E]" />
                           <span className="text-[8px] uppercase tracking-[0.2em] font-mono text-neutral-400 font-black">
                             ESCROW GUARANTEED
                           </span>
                         </div>
                         
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono font-black uppercase text-neutral-500 group-hover:text-neutral-950 transition-colors duration-300">
+                          <span className="text-[10px] font-mono font-black uppercase text-neutral-500 group-hover:text-[#3835A4] transition-colors duration-300">
                             Apply Brief
                           </span>
-                          <div className="p-1.5 rounded-xl bg-neutral-50 border border-neutral-200/60 group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900 transition-all duration-300">
+                          <div className="p-1.5 rounded-xl bg-neutral-50 border border-neutral-200/60 group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent transition-all duration-300">
                             <ArrowUpRight className="h-3.5 w-3.5" />
                           </div>
                         </div>

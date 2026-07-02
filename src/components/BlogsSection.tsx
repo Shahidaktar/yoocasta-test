@@ -16,11 +16,11 @@ export default function BlogsSection() {
     : INITIAL_BLOGS.filter(blog => blog.category === selectedCategory);
 
   return (
-    <div className="w-full bg-white py-28 border-b border-[#edeaea] mx-auto relative overflow-hidden">
+    <div className="w-full bg-white py-28 border-b border-[#f2f2f2] mx-auto relative overflow-hidden">
       
       {/* High fashion background details */}
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-amber-400/[0.01] filter blur-[120px] pointer-events-none" />
-      <div className="absolute left-0 bottom-0 h-96 w-96 rounded-full bg-neutral-900/[0.01] filter blur-[120px] pointer-events-none" />
+      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#3835A4]/[0.03] filter blur-[120px] pointer-events-none" />
+      <div className="absolute left-0 bottom-0 h-96 w-96 rounded-full bg-[#C6007E]/[0.02] filter blur-[120px] pointer-events-none" />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -28,7 +28,7 @@ export default function BlogsSection() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-10">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-neutral-850 font-mono font-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#C6007E] animate-pulse" />
               RUNWAY INSIDER GAZETTE
             </div>
             <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
@@ -38,7 +38,7 @@ export default function BlogsSection() {
               Vetted tips, professional guide briefs, and industry guidelines compiled by international casting directors and executive model scouts.
             </p>
           </div>
-
+ 
           {/* Interactive Categories Bar */}
           <div className="flex flex-wrap items-center gap-2 bg-neutral-100/80 p-1.5 rounded-2xl border border-neutral-250/30">
             {categories.map((cat) => {
@@ -49,8 +49,8 @@ export default function BlogsSection() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`relative px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
                     isSelected 
-                      ? 'bg-neutral-900 text-white shadow-sm' 
-                      : 'text-neutral-500 hover:text-neutral-900'
+                      ? 'bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white shadow-md' 
+                      : 'text-neutral-500 hover:text-[#3835A4]'
                   }`}
                 >
                   {cat}
@@ -75,7 +75,7 @@ export default function BlogsSection() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
                 onClick={() => setSelectedArticle(blog)}
-                className="bg-white flex flex-col rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl cursor-pointer group h-full border border-neutral-200/80 hover:border-neutral-900/30 transition-all duration-500 relative"
+                className="bg-white flex flex-col rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl cursor-pointer group h-full border border-neutral-200/80 hover:border-[#3835A4]/30 transition-all duration-500 relative"
                 style={{ contentVisibility: 'auto' }}
               >
                 {/* Visual Hair-thin Accent Outline */}
@@ -105,7 +105,7 @@ export default function BlogsSection() {
                       <span className="flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {blog.readTime}</span>
                     </div>
                     
-                    <h3 className="font-display text-xl sm:text-2xl font-black text-neutral-900 group-hover:text-amber-800 transition-colors tracking-tight line-clamp-1 leading-tight">
+                    <h3 className="font-display text-xl sm:text-2xl font-black text-neutral-900 group-hover:text-[#3835A4] transition-colors tracking-tight line-clamp-1 leading-tight">
                       {blog.title}
                     </h3>
 
@@ -116,7 +116,7 @@ export default function BlogsSection() {
 
                   <div className="mt-8 pt-5 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500 font-bold group-hover:text-neutral-900 transition-colors duration-300">
                     <span className="text-[9px] uppercase tracking-[0.25em] font-mono font-black">Read Journal Article</span>
-                    <div className="p-1.5 rounded-xl bg-neutral-50 border border-neutral-200/60 group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900 transition-all duration-300">
+                    <div className="p-1.5 rounded-xl bg-neutral-50 border border-neutral-200/60 group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent transition-all duration-300">
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function BlogsSection() {
               
               {/* Header Details bar */}
               <div className="px-6 py-4 bg-neutral-50 border-b border-neutral-100 flex items-center justify-between">
-                <span className="p-1 px-3.5 rounded-xl bg-amber-400/15 border border-amber-400/25 text-amber-900 text-[9px] font-mono font-black uppercase tracking-widest">{selectedArticle.category}</span>
+                <span className="p-1 px-3.5 rounded-xl bg-[#C6007E]/10 border border-[#C6007E]/20 text-[#C6007E] text-[9px] font-mono font-black uppercase tracking-widest">{selectedArticle.category}</span>
                 <button 
                   onClick={() => setSelectedArticle(null)}
                   className="p-2 rounded-xl hover:bg-neutral-200 text-neutral-500 hover:text-neutral-900 transition-colors cursor-pointer border border-transparent hover:border-neutral-250/20"
@@ -180,7 +180,7 @@ export default function BlogsSection() {
                 </div>
 
                 {/* Styled Pull-quote Summary */}
-                <div className="p-5 bg-amber-50 border-l-2 border-amber-500 text-xs italic text-amber-950 leading-relaxed rounded-r-xl font-medium">
+                <div className="p-5 bg-[#3835A4]/5 border-l-2 border-[#3835A4] text-xs italic text-neutral-800 leading-relaxed rounded-r-xl font-medium">
                   {selectedArticle.summary}
                 </div>
 
@@ -191,14 +191,14 @@ export default function BlogsSection() {
 
                 {/* Deluxe Footer Branding inside Reader */}
                 <div className="pt-8 border-t border-neutral-100 text-center flex flex-col items-center gap-3">
-                  <div className="h-10 w-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-600">
+                  <div className="h-10 w-10 rounded-xl bg-[#3835A4]/10 flex items-center justify-center text-[#3835A4]">
                     <BookOpen className="h-5 w-5" />
                   </div>
                   <p className="text-xs text-neutral-500 font-mono max-w-sm mx-auto">Want to secure absolute career exposure? Upgrade to premium modeling membership to land direct agency opportunities.</p>
                   
                   <button
                     onClick={() => setSelectedArticle(null)}
-                    className="mt-2 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold py-2.5 px-6 rounded-xl transition-all cursor-pointer shadow-md"
+                    className="mt-2 bg-gradient-to-r from-[#C6007E] to-[#3835A4] hover:opacity-95 text-white text-xs font-bold py-2.5 px-6 rounded-xl transition-all cursor-pointer shadow-md"
                   >
                     Close Article
                   </button>

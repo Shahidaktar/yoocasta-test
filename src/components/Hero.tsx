@@ -4,48 +4,48 @@ import { motion, AnimatePresence } from 'motion/react';
 import { CATEGORIES, LOCATIONS } from '../data';
 
 const HERO_BG_IMAGES = [
-  "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200", // Runway fashion
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200", // Production / Camera set
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200", // Studio model portrait
-  "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=1200", // Male photoshoot
-  "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200", // Film set / Directors board
+  "https://pub-9a6daccdd56649a4bb690162026e4c5d.r2.dev/profile/5bf6d6dbcbd22.png", // Runway fashion
+  "https://pub-9a6daccdd56649a4bb690162026e4c5d.r2.dev/profile/5bef879f3baeb.png", // Production / Camera set
+  "https://pub-9a6daccdd56649a4bb690162026e4c5d.r2.dev/profile/5bf6c1fd68985.png", // Studio model portrait
+  "https://pub-9a6daccdd56649a4bb690162026e4c5d.r2.dev/profile/5bf7d06ba333c.png", // Male photoshoot
+  "https://pub-9a6daccdd56649a4bb690162026e4c5d.r2.dev/profile/5bfe2e3659518.jpeg", // Film set / Directors board
 ];
 
 const SLIDE_METADATA = [
-  { tag: "EDITORIAL RUNWAY", title: "Elena Rostova", location: "Dubai Design District", stats: "178 CM • Green Eyes • Auburn" },
-  { tag: "CINEMATIC PRODUCTION", title: "Commercial Set 40B", location: "Riyadh Boulevard Studios", stats: "VIP Crew • High-Budget • 4K" },
-  { tag: "STUDIO PORTRAIT", title: "Zein Al-Rashed", location: "Downtown Dubai", stats: "174 CM • Brown Eyes • Black" },
-  { tag: "COMMERCIAL CAMPAIGN", title: "Tariq Al-Harbi", location: "Abu Dhabi Saadiyat", stats: "187 CM • Hazel Eyes • Dark Brown" },
-  { tag: "FILM MASTERCLASS", title: "Principal Cast Shoot", location: "Riyadh Media Hub", stats: "Lead Talent • Arabic Fluent" },
+  { tag: "EDITORIAL RUNWAY", title: "Ahmed Al Mansoori", location: "Dubai Design District", stats: "178 CM • Green Eyes • Auburn" },
+  { tag: "CINEMATIC PRODUCTION", title: "Mariam Al Kaabi", location: "Riyadh Boulevard Studios", stats: "VIP Crew • High-Budget • 4K" },
+  { tag: "STUDIO PORTRAIT", title: "Khalid Al Nuaimi", location: "Downtown Dubai", stats: "174 CM • Brown Eyes • Black" },
+  { tag: "COMMERCIAL CAMPAIGN", title: "Fatima Al Shehhi", location: "Abu Dhabi Saadiyat", stats: "187 CM • Hazel Eyes • Dark Brown" },
+  { tag: "FILM MASTERCLASS", title: "Aisha Al Marri", location: "Riyadh Media Hub", stats: "Lead Talent • Arabic Fluent" },
 ];
 
 // Interactive Studio Preset Colors
 const STUDIO_LIGHTS = [
   {
     id: 'warm-gold',
-    name: 'Warm Key Light',
-    accent: 'from-amber-600 via-amber-500 to-amber-700',
-    bgGlow: 'bg-amber-500/[0.04]',
-    spotlight: 'bg-amber-400/[0.12]',
-    ringColor: 'border-amber-400/40',
-    indicator: 'bg-amber-400',
-    textHighlight: 'text-amber-500',
-    pillBg: 'bg-amber-400/10 text-amber-700 border-amber-400/25',
-    btnBg: 'bg-neutral-900 hover:bg-amber-500 text-white',
-    hexColors: ['#d97706', '#f59e0b', '#fbbf24', '#f59e0b', '#d97706', '#b45309'],
+    name: 'Trendy Pink Key',
+    accent: 'from-[#C6007E] via-[#3835A4] to-[#C6007E]',
+    bgGlow: 'bg-[#C6007E]/[0.04]',
+    spotlight: 'bg-[#C6007E]/[0.12]',
+    ringColor: 'border-[#C6007E]/40',
+    indicator: 'bg-[#C6007E]',
+    textHighlight: 'text-[#C6007E]',
+    pillBg: 'bg-[#C6007E]/10 text-[#C6007E] border-[#C6007E]/25',
+    btnBg: 'bg-neutral-900 hover:bg-[#C6007E] text-white',
+    hexColors: ['#C6007E', '#3835A4', '#880053', '#3835A4', '#C6007E', '#2c2982'],
   },
   {
     id: 'neon-runway',
-    name: 'Runway Backstage',
-    accent: 'from-pink-600 via-amber-400 to-pink-700',
-    bgGlow: 'bg-pink-500/[0.04]',
-    spotlight: 'bg-pink-400/[0.12]',
-    ringColor: 'border-pink-400/40',
-    indicator: 'bg-pink-500',
-    textHighlight: 'text-pink-500',
-    pillBg: 'bg-pink-500/10 text-pink-700 border-pink-400/25',
-    btnBg: 'bg-neutral-900 hover:bg-pink-600 text-white',
-    hexColors: ['#db2777', '#ec4899', '#f43f5e', '#fb7185', '#fbbf24', '#be185d'],
+    name: 'Runway Magenta',
+    accent: 'from-[#C6007E] via-[#ffdeeb] to-[#3835A4]',
+    bgGlow: 'bg-[#C6007E]/[0.04]',
+    spotlight: 'bg-[#C6007E]/[0.12]',
+    ringColor: 'border-[#C6007E]/40',
+    indicator: 'bg-[#C6007E]',
+    textHighlight: 'text-[#C6007E]',
+    pillBg: 'bg-[#C6007E]/10 text-[#C6007E] border-[#C6007E]/25',
+    btnBg: 'bg-neutral-900 hover:bg-[#C6007E] text-white',
+    hexColors: ['#C6007E', '#a70068', '#880053', '#3835A4', '#2c2982', '#1b1959'],
   },
   {
     id: 'cinematic-teal',
@@ -62,16 +62,16 @@ const STUDIO_LIGHTS = [
   },
   {
     id: 'sunset-editorial',
-    name: 'Sunset Spotlight',
-    accent: 'from-violet-600 via-amber-400 to-orange-600',
-    bgGlow: 'bg-violet-500/[0.04]',
-    spotlight: 'bg-violet-400/[0.12]',
-    ringColor: 'border-violet-400/40',
-    indicator: 'bg-violet-500',
-    textHighlight: 'text-violet-500',
-    pillBg: 'bg-violet-400/10 text-violet-700 border-violet-400/25',
-    btnBg: 'bg-neutral-900 hover:bg-violet-600 text-white',
-    hexColors: ['#7c3aed', '#8b5cf6', '#a78bfa', '#f59e0b', '#f97316', '#ea580c'],
+    name: 'Yoocasta Royal',
+    accent: 'from-[#3835A4] via-[#C6007E] to-[#3835A4]',
+    bgGlow: 'bg-[#3835A4]/[0.04]',
+    spotlight: 'bg-[#3835A4]/[0.12]',
+    ringColor: 'border-[#3835A4]/40',
+    indicator: 'bg-[#3835A4]',
+    textHighlight: 'text-[#3835A4]',
+    pillBg: 'bg-[#3835A4]/10 text-[#3835A4] border-[#3835A4]/25',
+    btnBg: 'bg-neutral-900 hover:bg-[#3835A4] text-white',
+    hexColors: ['#3835A4', '#C6007E', '#3835A4', '#C6007E', '#3835A4', '#1b1959'],
   },
 ];
 
@@ -138,27 +138,7 @@ export default function Hero({ onSearch, registeredCount }: HeroProps) {
   return (
     <div className="relative min-h-[95vh] lg:min-h-[92vh] w-full overflow-hidden bg-white flex flex-col justify-between border-b border-neutral-100">
       
-      {/* ✦ HIGH FASHION SCROLLING RUNWAY TICKER BANNER (Outstanding Marquee Layout) ✦ */}
-      {/* <div className="w-full bg-neutral-950 py-3 overflow-hidden select-none relative z-20 border-b border-white/10">
-        <div className="flex whitespace-nowrap animate-marquee gap-12 text-[10px] uppercase font-mono font-black tracking-[0.2em] text-neutral-400">
-          <div className="flex items-center gap-12 shrink-0">
-            <span>✦ LIVE AUDITIONS OPEN: DUBAI DESIGN DISTRICT</span>
-            <span className="text-amber-400">★ CO-LEAD COMMERCIAL ROLES BY EMIRATES</span>
-            <span>✦ RIYADH FASHION WEEK CASTING NOW ACTIVE</span>
-            <span className="text-amber-400">★ AED 12,500 WEEKEND GALA HOSTESS SLOTS</span>
-            <span>✦ FEATURE FILM BACKSTAGE DIRECTORS SCOUTING</span>
-            <span className="text-amber-400">★ 100% ESCROW PROTECTED COMMISSIONS</span>
-          </div>
-          <div className="flex items-center gap-12 shrink-0">
-            <span>✦ LIVE AUDITIONS OPEN: DUBAI DESIGN DISTRICT</span>
-            <span className="text-amber-400">★ CO-LEAD COMMERCIAL ROLES BY EMIRATES</span>
-            <span>✦ RIYADH FASHION WEEK CASTING NOW ACTIVE</span>
-            <span className="text-amber-400">★ AED 12,500 WEEKEND GALA HOSTESS SLOTS</span>
-            <span>✦ FEATURE FILM BACKSTAGE DIRECTORS SCOUTING</span>
-            <span className="text-amber-400">★ 100% ESCROW PROTECTED COMMISSIONS</span>
-          </div>
-        </div>
-      </div> */}
+    
 
       {/* Main Hero Container */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 flex-grow flex items-center">
@@ -401,7 +381,7 @@ export default function Hero({ onSearch, registeredCount }: HeroProps) {
                       {meta.tag}
                     </span>
                     <span className="text-[8px] font-mono text-neutral-450 font-semibold flex items-center gap-0.5">
-                      <MapPin className="h-2 w-2 text-amber-400" /> {meta.location}
+                      <MapPin className="h-2 w-2 text-[#fcbb00]" /> {meta.location}
                     </span>
                   </div>
                   <div className="flex items-end justify-between">
@@ -413,7 +393,7 @@ export default function Hero({ onSearch, registeredCount }: HeroProps) {
                         {meta.stats}
                       </p>
                     </div>
-                    <span className="text-[9px] font-mono font-black text-amber-400 flex items-center gap-1 bg-amber-400/10 px-2 py-0.5 rounded">
+                    <span className="text-[9px] font-mono font-black text-[#fcbb00] flex items-center gap-1 bg-amber-400/10 px-2 py-0.5 rounded">
                       <Eye className="h-3 w-3" /> VERIFIED
                     </span>
                   </div>
@@ -471,8 +451,8 @@ export default function Hero({ onSearch, registeredCount }: HeroProps) {
             </div>
 
             <div className="absolute -top-6 -left-6 z-20 hidden sm:flex items-center gap-2 bg-neutral-950 text-white py-2.5 px-4 rounded-2xl shadow-xl border border-white/10 rotate-[-4deg]">
-              <Flame className="h-4 w-4 fill-current text-amber-400 animate-bounce" />
-              <span className="text-[10px] font-black uppercase tracking-widest font-mono text-amber-400">AED 20/Mo Premium</span>
+              <Flame className="h-4 w-4 fill-current text-[#fcbb00] animate-bounce" />
+              <span className="text-[10px] font-black uppercase tracking-widest font-mono text-[#fcbb00]">AED 20/Mo Premium</span>
             </div>
           </div>
 

@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
   const active = INITIAL_TESTIMONIALS[currentIndex];
 
   return (
-    <div id="testimonials" className="w-full bg-neutral-900 text-white py-32 border-b border-neutral-950 relative overflow-hidden">
+    <div id="testimonials" className="w-full bg-neutral-900 text-white py-32 border-b border-[#f2f2f2] relative overflow-hidden">
       
       {/* Decorative High-Contrast Glow Elements */}
       <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-amber-500/[0.03] filter blur-[150px] pointer-events-none" />

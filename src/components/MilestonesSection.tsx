@@ -53,11 +53,11 @@ export default function MilestonesSection() {
   const yearsList = Object.keys(HISTORICAL_MILESTONES).map(Number).sort((a, b) => b - a);
 
   return (
-    <div id="milestones" className="w-full bg-white py-32  relative overflow-hidden text-neutral-900">
+    <div id="milestones" className="w-full bg-white py-32 border-b border-[#f2f2f2] relative overflow-hidden text-neutral-900">
       
       {/* Editorial Luxury Lighting */}
-      <div className="absolute right-0 top-10 h-[600px] w-[600px] rounded-full bg-amber-400/[0.025] filter blur-[150px] pointer-events-none" />
-      <div className="absolute left-[15%] bottom-10 h-[500px] w-[500px] rounded-full bg-neutral-400/[0.02] filter blur-[130px] pointer-events-none" />
+      <div className="absolute right-0 top-10 h-[600px] w-[600px] rounded-full bg-[#3835A4]/[0.035] filter blur-[150px] pointer-events-none" />
+      <div className="absolute left-[15%] bottom-10 h-[500px] w-[500px] rounded-full bg-[#C6007E]/[0.02] filter blur-[130px] pointer-events-none" />
       
       {/* High Fashion Technical Studio Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -73,13 +73,13 @@ export default function MilestonesSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20 gap-10 pb-10 border-b border-neutral-200">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2.5 text-[10px] uppercase tracking-[0.3em] text-neutral-800 font-mono font-black bg-neutral-100 px-3.5 py-1.5 rounded-lg border border-neutral-250/20">
-              <Compass className="h-3.5 w-3.5 text-neutral-700 animate-spin-slow" />
+              <Compass className="h-3.5 w-3.5 text-[#3835A4] animate-spin-slow" />
               PROVEN METRICS & TRAJECTORY
             </div>
             <h2 className="font-display text-4xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
               Scaling The Network
             </h2>
-            <p className="text-sm text-neutral-500 font-medium leading-relaxed">
+            <p className="text-sm text-neutral-550 font-medium leading-relaxed">
               Yoocasta is the Middle East‘s fastest-growing digital runway, empowering direct connection between production creators and elite regional talents.
             </p>
           </div>
@@ -93,13 +93,13 @@ export default function MilestonesSection() {
                   key={y}
                   onClick={() => setSelectedYear(y)}
                   className={`relative px-6 py-3.5 text-xs font-mono font-black rounded-xl tracking-widest transition-all duration-300 cursor-pointer z-10 ${
-                    isActive ? 'text-white' : 'text-neutral-500 hover:text-neutral-900'
+                    isActive ? 'text-white' : 'text-neutral-500 hover:text-[#3835A4]'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeYearTab"
-                      className="absolute inset-0 bg-neutral-900 rounded-xl -z-10 shadow-md"
+                      className="absolute inset-0 bg-gradient-to-r from-[#C6007E] to-[#3835A4] rounded-xl -z-10 shadow-md"
                       transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -122,18 +122,18 @@ export default function MilestonesSection() {
           >
             
             {/* 1. Talents Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-neutral-900/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#C6007E]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#C6007E]/0 via-[#C6007E]/40 to-[#3835A4]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Corner Icon */}
-              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-neutral-50 border border-neutral-200 text-amber-600 flex items-center justify-center group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900 transition-all duration-500 shadow-xs">
+              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-[#C6007E]/5 border border-[#C6007E]/10 text-[#C6007E] flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-xs">
                 <Users className="h-5 w-5" />
               </div>
               
               <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // ROSTER CAPACITY</span>
               
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-amber-700 transition-colors duration-500">
+              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#C6007E] transition-colors duration-500">
                 {data.talents}
               </h3>
               
@@ -151,18 +151,18 @@ export default function MilestonesSection() {
             </div>
 
             {/* 2. Creators Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-neutral-900/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#3835A4]/0 via-[#3835A4]/40 to-[#C6007E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Corner Icon */}
-              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-neutral-50 border border-neutral-200 text-amber-600 flex items-center justify-center group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900 transition-all duration-500 shadow-xs">
+              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-[#3835A4]/5 border border-[#3835A4]/10 text-[#3835A4] flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-xs">
                 <HeartHandshake className="h-5 w-5" />
               </div>
               
               <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // AGENCY CLIENTS</span>
               
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-amber-700 transition-colors duration-500">
+              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
                 {data.creators}
               </h3>
               
@@ -172,23 +172,23 @@ export default function MilestonesSection() {
               
               <div className="mt-8 pt-6 border-t border-neutral-100 flex items-center justify-between text-[10px] font-mono text-neutral-400">
                 <span>Corporate Accounts</span>
-                <span className="text-amber-900 font-bold uppercase tracking-widest text-[9px] bg-amber-100 border border-amber-200/50 px-2.5 py-1 rounded-lg">ACTIVE REGION</span>
+                <span className="text-[#3835A4] font-bold uppercase tracking-widest text-[9px] bg-[#3835A4]/10 border border-[#3835A4]/20 px-2.5 py-1 rounded-lg">ACTIVE REGION</span>
               </div>
             </div>
 
             {/* 3. Projects Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-neutral-900/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#3835A4]/0 via-[#3835A4]/40 to-[#3835A4]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Corner Icon */}
-              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-neutral-50 border border-neutral-200 text-amber-600 flex items-center justify-center group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900 transition-all duration-500 shadow-xs">
+              <div className="absolute top-10 right-10 h-11 w-11 rounded-2xl bg-[#3835A4]/5 border border-[#3835A4]/10 text-[#3835A4] flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent transition-all duration-500 shadow-xs">
                 <Briefcase className="h-5 w-5" />
               </div>
               
               <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // TOTAL BRIEFINGS</span>
               
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-amber-700 transition-colors duration-500">
+              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
                 {data.projects}
               </h3>
               
@@ -198,7 +198,7 @@ export default function MilestonesSection() {
               
               <div className="mt-8 pt-6 border-t border-neutral-100 flex items-center justify-between text-[10px] font-mono text-neutral-400">
                 <span>Completed Campaigns</span>
-                <span className="text-amber-900 font-black uppercase tracking-widest text-[9px] bg-amber-100 border border-amber-200/50 px-2.5 py-1 rounded-lg">100% ESCROWED</span>
+                <span className="text-[#C6007E] font-black uppercase tracking-widest text-[9px] bg-[#C6007E]/10 border border-[#C6007E]/20 px-2.5 py-1 rounded-lg">100% ESCROWED</span>
               </div>
             </div>
 
@@ -212,15 +212,15 @@ export default function MilestonesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative group flex flex-col sm:flex-row items-center gap-3.5 bg-amber-50 border border-amber-200 py-4 px-8 rounded-3xl shadow-sm transition-all duration-300 max-w-4xl text-center"
+            className="relative group flex flex-col sm:flex-row items-center gap-3.5 bg-gradient-to-r from-[#C6007E]/5 to-[#3835A4]/5 border border-[#3835A4]/15 py-4 px-8 rounded-3xl shadow-xs transition-all duration-300 max-w-4xl text-center"
           >
             <span className="text-xs sm:text-sm text-neutral-600 font-medium">We have securely placed talents, settling over</span>
-            <span className="text-base sm:text-lg font-black text-amber-900 font-mono tracking-wider flex items-center gap-1.5 justify-center">
-              <Star className="h-4.5 w-4.5 fill-current text-amber-500 animate-pulse" />
+            <span className="text-base sm:text-lg font-black text-[#3835A4] font-mono tracking-wider flex items-center gap-1.5 justify-center">
+              <Star className="h-4.5 w-4.5 fill-current text-[#C6007E] animate-pulse" />
               AED 84,000,000+
             </span>
             <span className="text-neutral-300 hidden sm:inline">•</span>
-            <span className="text-[10px] text-neutral-550 font-black uppercase tracking-[0.15em] font-mono">Commission-Free Ecosystem</span>
+            <span className="text-[10px] text-[#C6007E] font-black uppercase tracking-[0.15em] font-mono">Commission-Free Ecosystem</span>
           </motion.div>
         </div>
 
