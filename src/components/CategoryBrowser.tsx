@@ -24,11 +24,11 @@ const CATEGORY_TAGS: Record<string, string> = {
 
 // Rich gradients matching the high fashion elite vibe of each specialty hub
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; glow: string; textAccent: string }> = {
-  'all': { bg: 'from-amber-500/10 to-amber-600/5', border: 'group-hover:border-amber-400/40', glow: 'bg-amber-400/[0.03]', textAccent: 'text-amber-500' },
+  'all': { bg: 'from-[#C6007E]/10 to-[#3835A4]/5', border: 'group-hover:border-[#C6007E]/40', glow: 'bg-[#C6007E]/[0.03]', textAccent: 'text-[#C6007E]' },
   'Actors & Extras': { bg: 'from-emerald-500/10 to-emerald-600/5', border: 'group-hover:border-emerald-400/40', glow: 'bg-emerald-400/[0.03]', textAccent: 'text-emerald-500' },
   'Singers': { bg: 'from-violet-500/10 to-violet-600/5', border: 'group-hover:border-violet-400/40', glow: 'bg-violet-400/[0.03]', textAccent: 'text-violet-400' },
   'Dancers': { bg: 'from-pink-500/10 to-pink-600/5', border: 'group-hover:border-pink-400/40', glow: 'bg-pink-400/[0.03]', textAccent: 'text-pink-400' },
-  'Models': { bg: 'from-amber-500/10 to-amber-600/5', border: 'group-hover:border-amber-400/40', glow: 'bg-amber-400/[0.03]', textAccent: 'text-amber-500' },
+  'Models': { bg: 'from-[#C6007E]/10 to-[#3835A4]/5', border: 'group-hover:border-[#C6007E]/40', glow: 'bg-[#C6007E]/[0.03]', textAccent: 'text-[#C6007E]' },
   'Photographers': { bg: 'from-blue-500/10 to-blue-600/5', border: 'group-hover:border-blue-400/40', glow: 'bg-blue-400/[0.03]', textAccent: 'text-blue-400' },
   'Directors & Crew': { bg: 'from-cyan-500/10 to-cyan-600/5', border: 'group-hover:border-cyan-400/40', glow: 'bg-cyan-400/[0.03]', textAccent: 'text-cyan-400' },
   'Promoters & Hosts': { bg: 'from-orange-500/10 to-orange-600/5', border: 'group-hover:border-orange-400/40', glow: 'bg-orange-400/[0.03]', textAccent: 'text-orange-400' },
@@ -38,11 +38,11 @@ const CATEGORY_COLORS: Record<string, { bg: string; border: string; glow: string
 
 export default function CategoryBrowser({ selectedCategory, onSelectCategory }: CategoryBrowserProps) {
   return (
-    <div className="w-full bg-white py-20 border-y border-neutral-100 relative overflow-hidden">
+    <div className="w-full bg-white py-20 border-y border-[#f2f2f2] relative overflow-hidden">
       {/* Decorative luxury mesh & spotlight gradient */}
-      <div className="absolute right-1/4 top-1/2 h-96 w-96 rounded-full bg-amber-500/[0.03] filter blur-[100px] pointer-events-none" />
-      <div className="absolute left-10 bottom-10 h-80 w-80 rounded-full bg-emerald-500/[0.02] filter blur-[80px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute right-1/4 top-1/2 h-96 w-96 rounded-full bg-[#3835A4]/[0.035] filter blur-[100px] pointer-events-none" />
+      <div className="absolute left-10 bottom-10 h-80 w-80 rounded-full bg-[#C6007E]/[0.02] filter blur-[80px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(211, 205, 205, 0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -50,7 +50,7 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-10 border-b border-neutral-200/65">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-neutral-800 font-mono font-black">
-              <span className="h-1.5 w-10 bg-neutral-900 rounded-full animate-pulse" />
+              <span className="h-1.5 w-10 bg-gradient-to-r from-[#C6007E] to-[#3835A4] rounded-full animate-pulse" />
               TALENT DEPARTMENTS
             </div>
             <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
@@ -82,7 +82,7 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
                 whileTap={{ scale: 0.985 }}
                 className={`group relative p-6 rounded-3xl flex flex-col justify-between items-stretch text-left transition-all duration-300 cursor-pointer overflow-hidden border ${
                   isActive 
-                  ? 'border-neutral-950 bg-neutral-950 text-white shadow-xl shadow-neutral-950/20' 
+                  ? 'border-transparent bg-gradient-to-br from-[#3835A4] to-[#C6007E] text-white shadow-xl shadow-[#3835A4]/25' 
                   : `border-neutral-200/80 bg-neutral-50/60 hover:bg-white ${colorMeta.border} hover:shadow-lg hover:shadow-neutral-100`
                 }`}
                 style={{ contentVisibility: 'auto' }}
@@ -95,14 +95,14 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
                 {/* Top Section: Number + Glow indicator */}
                 <div className="flex items-center justify-between relative z-10">
                   <span className={`text-[10px] font-mono tracking-widest font-black ${
-                    isActive ? 'text-amber-400' : 'text-neutral-400 group-hover:text-neutral-900'
+                    isActive ? 'text-pink-200' : 'text-neutral-400 group-hover:text-neutral-900'
                   }`}>
                     DEP // {numStr}
                   </span>
                   
                   {/* High fashion visual badge */}
                   <span className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                    isActive ? 'bg-amber-400 scale-125 shadow-[0_0_8px_rgba(251,191,36,0.8)]' : 'bg-neutral-350 group-hover:scale-125'
+                    isActive ? 'bg-white scale-125 shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'bg-neutral-350 group-hover:scale-125'
                   }`} />
                 </div>
 
@@ -110,8 +110,8 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
                 <div className="my-7 relative z-10">
                   <div className={`inline-flex p-3.5 rounded-2xl transition-all duration-300 ${
                     isActive 
-                    ? 'bg-amber-400 text-neutral-950 shadow-lg shadow-amber-400/20' 
-                    : 'bg-white text-neutral-800 border border-neutral-200 shadow-sm group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900'
+                    ? 'bg-white text-[#3835A4] shadow-lg shadow-white/20' 
+                    : 'bg-white text-neutral-800 border border-neutral-200 shadow-sm group-hover:bg-gradient-to-br group-hover:from-[#C6007E] group-hover:to-[#3835A4] group-hover:text-white group-hover:border-transparent'
                   }`}>
                     <IconComponent className="h-5 w-5" />
                   </div>
@@ -127,7 +127,7 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
                     </h3>
                     {/* Specialized custom tag descriptors to look premium and fully realized */}
                     <p className={`text-[10px] font-medium tracking-wide mt-0.5 ${
-                      isActive ? 'text-neutral-400' : 'text-neutral-400 group-hover:text-neutral-600'
+                      isActive ? 'text-neutral-200' : 'text-neutral-400 group-hover:text-neutral-600'
                     }`}>
                       {subTag}
                     </p>
@@ -135,7 +135,7 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
 
                   <div className="flex items-center justify-between pt-2 border-t border-dashed border-neutral-200/50 group-hover:border-neutral-300/80">
                     <span className={`text-[10px] font-mono font-bold ${
-                      isActive ? 'text-amber-300' : 'text-neutral-500'
+                      isActive ? 'text-pink-100' : 'text-neutral-500 group-hover:text-[#3835A4]'
                     }`}>
                       {cat.count.toLocaleString()} ACTIVE
                     </span>
@@ -144,7 +144,7 @@ export default function CategoryBrowser({ selectedCategory, onSelectCategory }: 
                         View
                       </span>
                       <Icons.ArrowUpRight className={`h-3.5 w-3.5 transition-transform duration-300 ${
-                        isActive ? 'text-amber-400 translate-x-0.5 -translate-y-0.5' : 'text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
+                        isActive ? 'text-white translate-x-0.5 -translate-y-0.5' : 'text-neutral-400 group-hover:text-[#3835A4] group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
                       }`} />
                     </div>
                   </div>

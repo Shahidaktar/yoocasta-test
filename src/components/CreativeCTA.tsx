@@ -26,7 +26,7 @@ export default function CreativeCTA({
   ];
 
   return (
-    <section id="creative-cta" className="w-full bg-[#B58E43] py-32 relative overflow-hidden border-t border-amber-600/20 text-white">
+    <section id="creative-cta" className="w-full bg-gradient-to-br from-[#C6007E] to-[#3835A4] py-32 relative overflow-hidden border-t border-white/10 text-white">
       
       {/* 1. INFINITE RUNNING TEXT TICKERS IN BACKGROUND */}
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col gap-10 pointer-events-none select-none z-0 opacity-15">
@@ -139,39 +139,7 @@ export default function CreativeCTA({
           </button>
         </div>
 
-        {/* Creative "Contact Us" Open Navigation Tray (No cards, extremely aesthetic) */}
-        {/* <div className="mt-24 pt-12 border-t border-white/20 max-w-4xl mx-auto flex flex-col items-center gap-6">
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-5">
-      
-            <a 
-              href="mailto:management@yoocasta.com" 
-              className="group inline-flex items-center gap-2 text-xs font-mono font-black uppercase tracking-widest bg-white/15 hover:bg-white text-white hover:text-amber-600 px-6 py-3.5 rounded-xl border border-white/25 transition-all duration-300"
-            >
-              <Mail className="h-4 w-4 text-white group-hover:text-amber-600" />
-              <span>CONTACT US</span>
-            </a>
-
-            <a 
-              href="https://wa.me/971582224178" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center gap-2 text-xs font-mono font-bold hover:text-neutral-950 transition-colors text-white"
-            >
-              <MessageSquare className="h-4 w-4 shrink-0" />
-              <span>WhatsApp Support (+971 58 2224178)</span>
-            </a>
-
-            <span className="text-white/40 hidden sm:inline">•</span>
-
-            <button 
-              onClick={onPremiumClick}
-              className="flex items-center gap-1.5 text-xs font-mono font-bold hover:text-neutral-950 transition-colors text-white cursor-pointer"
-            >
-              <Sparkles className="h-4 w-4 fill-current text-white animate-pulse" />
-              <span>VIP Priority Access (AED 20)</span>
-            </button>
-          </div>
-        </div> */}
+       
 
       </div>
     </section>

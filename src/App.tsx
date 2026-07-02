@@ -10,6 +10,7 @@ import BlogsSection from './components/BlogsSection';
 import FAQSection from './components/FAQSection';
 import CreativeCTA from './components/CreativeCTA';
 import Footer from './components/Footer';
+import VideoSection from './components/VideoSection';
 
 // Wizards and Detail Dialogs
 import TalentWizard from './components/TalentWizard';
@@ -179,7 +180,8 @@ export default function App() {
         onCategoryChange={setSelectedCategory}
       />
 
-
+      {/* 4.5 Creative Trendy Video Showroom Section */}
+      <VideoSection />
 
       {/* 5. Casting Calls Board */}
       <CastingCallsSection 
@@ -345,7 +347,7 @@ export default function App() {
             ) : (
               <form onSubmit={handlePremiumSubmit} className="space-y-4">
                 <div className="text-center space-y-1">
-                  <div className="inline-flex py-1 px-3 bg-amber-450 text-neutral-950 font-black text-[9px] uppercase tracking-wider rounded-full mx-auto shadow-sm">
+                  <div className="inline-flex py-1 px-3 bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white font-black text-[9px] uppercase tracking-wider rounded-full mx-auto shadow-sm">
                     ELITE UPGRADE
                   </div>
                   <h3 className="font-display text-xl font-black text-neutral-900">Activate Yoocasta Premium</h3>
@@ -388,7 +390,7 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-amber-500 py-3 text-xs font-black text-white hover:bg-amber-600 transition-all uppercase tracking-wider shadow-sm cursor-pointer"
+                  className="w-full rounded-xl bg-gradient-to-r from-[#C6007E] to-[#3835A4] py-3 text-xs font-black text-white hover:opacity-90 transition-all uppercase tracking-wider shadow-md cursor-pointer"
                 >
                   Acquire Premium Plan
                 </button>
