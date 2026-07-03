@@ -17,7 +17,7 @@ export default function TestimonialsSection() {
   const active = INITIAL_TESTIMONIALS[currentIndex];
 
   return (
-    <div id="testimonials" className="w-full bg-neutral-900 text-white py-32 border-b border-[#f2f2f2] relative overflow-hidden">
+    <div id="testimonials" className="w-full bg-neutral-900 text-white py-12 border-b border-[#f2f2f2] relative overflow-hidden">
       
       {/* Decorative High-Contrast Glow Elements */}
       <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-amber-500/[0.03] filter blur-[150px] pointer-events-none" />
@@ -33,10 +33,6 @@ export default function TestimonialsSection() {
         {/* Section Header - Elite Editorial Dark Design */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-amber-400 font-mono font-black bg-amber-400/5 px-3 py-1 rounded-md border border-amber-400/10">
-              <Sparkles className="h-3 w-3 animate-pulse text-amber-400" />
-              VERIFIED SUCCESS STORIES
-            </div>
             <h2 className="font-display text-4xl font-black text-white sm:text-5xl tracking-tight leading-none">
               Success Diaries & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100">Feedback</span>
@@ -44,17 +40,6 @@ export default function TestimonialsSection() {
             <p className="text-sm text-neutral-400 leading-relaxed font-medium">
               Read verified experiences from Middle Eastern and international runway models, actors, and bilingual hosts booked through Yoocasta.
             </p>
-          </div>
-
-          {/* Mini Stats Banner */}
-          <div className="flex items-center gap-6 bg-white/[0.02] backdrop-blur-md border border-white/5 p-4 rounded-2xl self-start lg:self-auto">
-            <div className="h-10 w-10 rounded-xl bg-amber-400/10 flex items-center justify-center text-amber-400 shrink-0">
-              <Trophy className="h-5 w-5" />
-            </div>
-            <div>
-              <div className="text-xl font-black text-white font-mono leading-none">100%</div>
-              <div className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase mt-1">Escrow Guaranteed Payments</div>
-            </div>
           </div>
         </div>
 
@@ -67,7 +52,7 @@ export default function TestimonialsSection() {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-[340px] aspect-[4/5] group">
                 {/* Visual Golden Aura Card behind */}
-                <div className="absolute inset-4 -right-2 -bottom-2 bg-gradient-to-tr from-amber-500 to-amber-300 rounded-[2.5rem] filter blur-xl opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute inset-4 -right-2 -bottom-2 bg-gradient-to-tr from-amber-500 to-amber-300 rounded-[2.5rem] filter blur-[1xl] opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-neutral-800 rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl relative z-10">
                   <AnimatePresence mode="wait">
                     <motion.img 
@@ -189,4 +174,3 @@ export default function TestimonialsSection() {
     </div>
   );
 }
-

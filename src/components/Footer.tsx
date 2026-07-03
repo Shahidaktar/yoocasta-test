@@ -1,13 +1,9 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Star, Globe, Compass } from 'lucide-react';
+import { Phone, Mail, MapPin, Compass } from 'lucide-react';
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="w-full bg-neutral-950 text-neutral-400 py-20 border-t border-neutral-900 relative z-10 overflow-hidden">
+    <footer className="w-full bg-neutral-950 text-neutral-400 py-12 border-t border-neutral-900 relative z-10 overflow-hidden">
       
       {/* Editorial Luxury Lighting */}
       <div className="absolute right-[10%] top-0 h-96 w-96 rounded-full bg-amber-500/[0.02] filter blur-[120px] pointer-events-none" />
@@ -19,7 +15,7 @@ export default function Footer() {
       {/* Main footer layout columns */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Creative Brand & Scroll Header */}
+        {/* Top Creative Brand Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-12 mb-12 border-b border-white/[0.06] gap-6">
           <div className="space-y-3">
             <div className="flex items-center gap-4">
@@ -29,28 +25,16 @@ export default function Footer() {
                 className="h-8 sm:h-9 w-auto object-contain" 
                 referrerPolicy="no-referrer"
               />
-              <span className="text-[8px] font-mono font-black uppercase text-amber-400 tracking-[0.2em] bg-amber-400/10 px-2.5 py-1 rounded-md border border-amber-400/20">
-                GCC EDITION 2026
-              </span>
             </div>
             <p className="text-xs text-neutral-450 max-w-xl leading-relaxed">
               Yoocasta is a modern-style Online CASTing Agency designed to connect individual freelance talents with industry-leading directors, creators, and ad houses in Dubai, Abu Dhabi, Saudi Arabia, Qatar, Oman, and Bahrain.
             </p>
           </div>
-
-          {/* Interactive Back To Top Button */}
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center gap-2.5 px-4.5 py-3 rounded-xl bg-white/[0.02] hover:bg-amber-400 hover:text-neutral-950 border border-white/5 hover:border-amber-400 text-xs font-mono font-black tracking-wider transition-all duration-300 cursor-pointer text-white self-stretch md:self-auto justify-center"
-          >
-            <span>BACK TO RUNWAY TOP</span>
-            <ArrowUp className="h-4 w-4 transition-transform group-hover:-translate-y-1" />
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pt-4">
           
-          {/* Col 1 Brand message & Escrow badge */}
+          {/* Col 1 Brand message */}
           <div className="space-y-6">
             <h4 className="font-display text-xs font-bold text-white uppercase tracking-[0.25em] font-mono flex items-center gap-2">
               <Compass className="h-4 w-4 text-amber-400 animate-spin-slow" />
@@ -59,10 +43,6 @@ export default function Footer() {
             <p className="text-xs text-neutral-400 leading-relaxed font-medium">
               We operate completely free of standard talent agency commission percentages, offering performers 100% of their contracted rates, supported by an optional AED 20/Month VIP subscription.
             </p>
-            <div className="inline-flex items-center gap-2 text-emerald-400 font-mono font-medium bg-emerald-500/5 border border-emerald-500/10 px-3.5 py-1.5 rounded-xl">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-[9px] uppercase tracking-wider font-black">Escrow Guard Enabled</span>
-            </div>
           </div>
 
           {/* Col 2 Office Contact stats */}
@@ -113,15 +93,6 @@ export default function Footer() {
             <p className="text-xs text-neutral-400 leading-relaxed font-mono">
               Yoocasta is a registered trademark and digital platform operated by Yoocasta FZE LLC, UAE. Licensed for media casting across all Gulf Emirates.
             </p>
-            
-            {/* Card secure payment logos mock */}
-            <div className="p-4 rounded-2xl bg-white/[0.01] border border-white/5 flex items-center gap-3.5 shadow-sm group hover:bg-white/[0.02] hover:border-amber-400/20 transition-all duration-300">
-              <ShieldCheck className="h-5 w-5 text-emerald-400" />
-              <div>
-                <p className="text-[9px] font-mono font-black tracking-wider text-white">SECURE STRIPE ESCROW</p>
-                <p className="text-[8px] text-neutral-500 mt-0.5">Visa • Mastercard • Apple Pay</p>
-              </div>
-            </div>
           </div>
         </div>
 

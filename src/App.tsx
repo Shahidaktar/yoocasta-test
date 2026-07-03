@@ -22,6 +22,8 @@ import CastingDetailsModal from './components/CastingDetailsModal';
 import { INITIAL_TALENTS, INITIAL_CASTINGS } from './data';
 import { Talent, CastingCall } from './types';
 import { X, Sparkles, Check, Mail, Phone, Lock, Calendar, DollarSign, ArrowRight } from 'lucide-react';
+import TalentAndCastingSection from './components/Talentandcastingsection';
+import BackToTopButton from './components/BackToTopButton';
 
 export default function App() {
   // Live dataset states
@@ -163,10 +165,12 @@ export default function App() {
       />
 
       {/* 3. Category Browser Grid */}
-      <CategoryBrowser 
-        selectedCategory={selectedCategory} 
-        onSelectCategory={setSelectedCategory} 
-      />
+      <TalentAndCastingSection
+  selectedCategory={selectedCategory}
+  onSelectCategory={setSelectedCategory}
+  castings={castings}
+  onCastingClick={setActiveCastingDetails}
+/>
 
       {/* 4. Filterable Talent Grid portfolio */}
       <FeaturedTalent
@@ -184,10 +188,10 @@ export default function App() {
       <VideoSection />
 
       {/* 5. Casting Calls Board */}
-      <CastingCallsSection 
+      {/* <CastingCallsSection 
         castings={castings} 
         onCastingClick={setActiveCastingDetails} 
-      />
+      /> */}
 
       {/* 6. Milestones Sectors */}
       <MilestonesSection />
@@ -210,7 +214,7 @@ export default function App() {
 
       {/* 11. Gorgeous Brand partner Footer & office registries */}
       <Footer />
-
+<BackToTopButton />
 
       {/* MODALS LAYOUT */}
 
