@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, Sparkles, Mail, MessageSquare, Compass, Phone } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface CreativeCTAProps {
   onPostCastingClick: () => void;
@@ -26,10 +26,10 @@ export default function CreativeCTA({
   ];
 
   return (
-    <section id="creative-cta" className="w-full bg-gradient-to-br from-[#C6007E] to-[#3835A4] py-32 relative overflow-hidden border-t border-white/10 text-white">
+    <section id="creative-cta" className="w-full bg-gradient-to-br from-[#C6007E] to-[#3835A4] py-12 relative overflow-hidden border-t border-white/10 text-white">
       
-      {/* 1. INFINITE RUNNING TEXT TICKERS IN BACKGROUND */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col gap-10 pointer-events-none select-none z-0 opacity-15">
+      {/* 1. INFINITE RUNNING TEXT TICKERS IN BACKGROUND - MAX TRANSPARENCY */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col gap-10 pointer-events-none select-none z-0 opacity-[0.04]">
         
         {/* Row 1: Left moving */}
         <div className="flex overflow-hidden whitespace-nowrap">
@@ -83,20 +83,6 @@ export default function CreativeCTA({
       {/* Main Content: Centered & Creative Editorial Column Stack */}
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
-        {/* Luxury Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2.5 px-4 py-2 bg-white/10 border border-white/20 rounded-full backdrop-blur-md mb-8 shadow-md"
-        >
-          <Sparkles className="h-3.5 w-3.5 text-white animate-pulse" />
-          <span className="text-[9px] font-mono font-black uppercase tracking-[0.25em] text-white">
-            MIDDLE EAST CREATIVE COALITION
-          </span>
-        </motion.div>
-
         {/* Bold Title */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -138,8 +124,6 @@ export default function CreativeCTA({
             <ArrowUpRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
           </button>
         </div>
-
-       
 
       </div>
     </section>

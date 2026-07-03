@@ -53,7 +53,7 @@ export default function MilestonesSection() {
   const yearsList = Object.keys(HISTORICAL_MILESTONES).map(Number).sort((a, b) => b - a);
 
   return (
-    <div id="milestones" className="w-full bg-white py-32 border-b border-[#f2f2f2] relative overflow-hidden text-neutral-900">
+    <div id="milestones" className="w-full bg-white py-12 border-b border-[#f2f2f2] relative overflow-hidden text-neutral-900">
       
       {/* Editorial Luxury Lighting */}
       <div className="absolute right-0 top-10 h-[600px] w-[600px] rounded-full bg-[#3835A4]/[0.035] filter blur-[150px] pointer-events-none" />
@@ -72,10 +72,6 @@ export default function MilestonesSection() {
         {/* Section header & luxury timeline segment picker */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20 gap-10 pb-10 border-b border-neutral-200">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2.5 text-[10px] uppercase tracking-[0.3em] text-neutral-800 font-mono font-black bg-neutral-100 px-3.5 py-1.5 rounded-lg border border-neutral-250/20">
-              <Compass className="h-3.5 w-3.5 text-[#3835A4] animate-spin-slow" />
-              PROVEN METRICS & TRAJECTORY
-            </div>
             <h2 className="font-display text-4xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
               Scaling The Network
             </h2>
@@ -122,7 +118,7 @@ export default function MilestonesSection() {
           >
             
             {/* 1. Talents Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#C6007E]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 pt-14 border border-neutral-200 hover:border-[#C6007E]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#C6007E]/0 via-[#C6007E]/40 to-[#3835A4]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -131,9 +127,7 @@ export default function MilestonesSection() {
                 <Users className="h-5 w-5" />
               </div>
               
-              <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // ROSTER CAPACITY</span>
-              
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#C6007E] transition-colors duration-500">
+              <h3 className="mt-2 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#C6007E] transition-colors duration-500">
                 {data.talents}
               </h3>
               
@@ -145,13 +139,13 @@ export default function MilestonesSection() {
                 <span>Verified GCC Portfolios</span>
                 <span className="text-emerald-700 font-bold flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/60">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  SECURED
+                  <span>SECURED</span>
                 </span>
               </div>
             </div>
 
             {/* 2. Creators Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 pt-14 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#3835A4]/0 via-[#3835A4]/40 to-[#C6007E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -160,9 +154,7 @@ export default function MilestonesSection() {
                 <HeartHandshake className="h-5 w-5" />
               </div>
               
-              <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // AGENCY CLIENTS</span>
-              
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
+              <h3 className="mt-2 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
                 {data.creators}
               </h3>
               
@@ -177,7 +169,7 @@ export default function MilestonesSection() {
             </div>
 
             {/* 3. Projects Card */}
-            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="relative group rounded-[2.25rem] bg-white p-8 sm:p-10 pt-14 border border-neutral-200 hover:border-[#3835A4]/40 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               {/* Abstract decorative graphic line */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#3835A4]/0 via-[#3835A4]/40 to-[#3835A4]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -186,9 +178,7 @@ export default function MilestonesSection() {
                 <Briefcase className="h-5 w-5" />
               </div>
               
-              <span className="text-[8px] uppercase font-mono tracking-[0.2em] text-neutral-400 font-bold">METRIC // TOTAL BRIEFINGS</span>
-              
-              <h3 className="mt-8 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
+              <h3 className="mt-2 font-display text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight group-hover:text-[#3835A4] transition-colors duration-500">
                 {data.projects}
               </h3>
               

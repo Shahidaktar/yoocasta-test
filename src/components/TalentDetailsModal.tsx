@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Talent } from '../types';
-import { X, Calendar, MapPin, Sparkles, Send, Ruler, Heart, Phone } from 'lucide-react';
+import { X, MapPin, Send } from 'lucide-react';
 
 interface TalentDetailsModalProps {
   talent: Talent;
@@ -9,26 +9,15 @@ interface TalentDetailsModalProps {
 
 export default function TalentDetailsModal({ talent, onClose }: TalentDetailsModalProps) {
   const [activePhoto, setActivePhoto] = useState(talent.profileImage);
-  const [bookingName, setBookingName] = useState('');
-  const [bookingEmail, setBookingEmail] = useState('');
-  const [bookingPhone, setBookingPhone] = useState('');
-  const [bookingMessage, setBookingMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleBookingSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!bookingName || !bookingEmail) return;
-
-    // Simulate sending booking inquiry
-    setIsSuccess(true);
-    setTimeout(() => {
-      // Just auto-reset or keep success state
-    }, 4000);
+  const handleViewDetails = () => {
+    // Action trigger when clicking the main CTA button
+    console.log(`Viewing full profile details for: ${talent.name}`);
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/70 backdrop-blur-md">
-      <div className="relative w-full max-w-4xl rounded-3xl border border-neutral-200 bg-white shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[92vh] md:h-[620px]">
+      <div className="relative w-full max-w-4xl rounded-3xl border border-neutral-200 bg-white shadow-2xl overflow-y-auto md:overflow-hidden flex flex-col md:flex-row max-h-[92vh] md:h-[650px]">
         
         {/* Close Button on top right */}
         <button 
@@ -41,7 +30,7 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
         {/* Left Side: Photo presentation & Gallery */}
         <div className="w-full md:w-[45%] bg-neutral-50 p-6 flex flex-col justify-between shrink-0 border-r border-neutral-200">
           {/* Large photo presentation */}
-          <div className="h-[280px] md:h-[380px] rounded-2xl overflow-hidden bg-white border border-neutral-100 relative shadow-sm">
+          <div className="h-[280px] md:h-[400px] rounded-2xl overflow-hidden bg-white border border-neutral-100 relative shadow-sm">
             <img 
               src={activePhoto} 
               alt={talent.name} 
@@ -49,7 +38,7 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
               referrerPolicy="no-referrer"
             />
             {talent.isPremium && (
-              <span className="absolute top-4 left-4 inline-flex items-center gap-1 bg-amber-400 text-neutral-950 text-[9px] uppercase font-black px-2 py-0.5 rounded-full shadow-lg">
+              <span className="absolute top-4 left-4 inline-flex items-center gap-1 bg-amber-400 text-neutral-950 text-[9px] uppercase font-black px-2 py-0.5 rounded-full shadow-md tracking-wider">
                 PREMIUM
               </span>
             )}
@@ -61,7 +50,7 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
               <button
                 key={i}
                 onClick={() => setActivePhoto(imgUrl)}
-                className={`h-16 w-16 rounded-xl overflow-hidden bg-neutral-150 shrink-0 border-2 transition-all cursor-pointer ${
+                className={`h-16 w-16 rounded-xl overflow-hidden bg-neutral-100 shrink-0 border-2 transition-all cursor-pointer ${
                   activePhoto === imgUrl ? 'border-amber-500 scale-[1.03]' : 'border-transparent hover:border-neutral-300'
                 }`}
               >
@@ -71,7 +60,7 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
           </div>
         </div>
 
-        {/* Right Side: Informative specs and Booking Request */}
+        {/* Right Side: Informative specs and Action CTA */}
         <div className="w-full md:w-[55%] flex flex-col justify-between md:overflow-y-auto p-6 md:p-8">
           
           <div className="space-y-6">
@@ -88,8 +77,8 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
               <div className="mt-1 flex items-center gap-1.5 text-xs text-neutral-600">
                 <MapPin className="h-4 w-4 text-neutral-400" />
                 <span>Based in {talent.location}</span>
-                <span className="text-neutral-350">•</span>
-                <span className="text-amber-705 font-mono font-bold">Verified Com Card</span>
+                <span className="text-neutral-300">•</span>
+                <span className="text-amber-750 font-mono font-bold">Verified Com Card</span>
               </div>
             </div>
 
@@ -133,7 +122,7 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
               </div>
             </div>
 
-            {/* Filmography timeline */}
+            {/* Filmography details */}
             <div>
               <h3 className="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-2">Selected Accomplishments</h3>
               <ul className="space-y-1.5">
@@ -147,57 +136,15 @@ export default function TalentDetailsModal({ talent, onClose }: TalentDetailsMod
             </div>
           </div>
 
-          {/* Interactive Booking Enquiry Form */}
-          <div className="mt-8 pt-6 border-t border-neutral-150">
-            {isSuccess ? (
-              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-250 text-center animate-fade-in">
-                <p className="text-sm font-bold text-emerald-800">Inquiry Sent Successfully!</p>
-                <p className="text-[10px] text-neutral-505 mt-1">Our Arab Booking managers have been notified via WhatsApp & Email and will coordinate scheduling.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleBookingSubmit} className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-widest text-amber-700 font-bold flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4 text-amber-600" />
-                  <span>Book {talent.name} For Project</span>
-                </h3>
-                
-                <div className="grid grid-cols-2 gap-2">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your Brand Name *"
-                    value={bookingName}
-                    onChange={(e) => setBookingName(e.target.value)}
-                    className="rounded-lg bg-white border border-neutral-300 p-2 text-xs text-neutral-800 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/20"
-                  />
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your Work Email *"
-                    value={bookingEmail}
-                    onChange={(e) => setBookingEmail(e.target.value)}
-                    className="rounded-lg bg-white border border-neutral-300 p-2 text-xs text-neutral-800 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/20"
-                  />
-                </div>
-
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    placeholder="Brief Message (Campaign type, dates)..."
-                    value={bookingMessage}
-                    onChange={(e) => setBookingMessage(e.target.value)}
-                    className="flex-grow rounded-lg bg-white border border-neutral-300 p-2 text-xs text-neutral-800 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/20"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-amber-500 text-white hover:bg-amber-600 font-bold px-4 rounded-lg text-xs tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 shrink-0 shadow-sm"
-                  >
-                    <Send className="h-3 w-3" />
-                    <span>Inquire</span>
-                  </button>
-                </div>
-              </form>
-            )}
+          {/* Clean Layout Action Footer */}
+          <div className="mt-8 pt-4 border-t border-neutral-100">
+            <button
+              onClick={handleViewDetails}
+              className="w-full bg-amber-500 text-white hover:bg-amber-600 font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-sm hover:shadow"
+            >
+              <Send className="h-3.5 w-3.5" />
+              <span>View Full Profile Details</span>
+            </button>
           </div>
 
         </div>

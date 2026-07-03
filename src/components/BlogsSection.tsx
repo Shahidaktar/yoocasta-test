@@ -16,7 +16,7 @@ export default function BlogsSection() {
     : INITIAL_BLOGS.filter(blog => blog.category === selectedCategory);
 
   return (
-    <div className="w-full bg-white py-28 border-b border-[#f2f2f2] mx-auto relative overflow-hidden">
+    <div className="w-full bg-white py-12 border-b border-[#f2f2f2] mx-auto relative overflow-hidden">
       
       {/* High fashion background details */}
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#3835A4]/[0.03] filter blur-[120px] pointer-events-none" />
@@ -25,39 +25,33 @@ export default function BlogsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-10">
-          <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-neutral-850 font-mono font-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#C6007E] animate-pulse" />
-              RUNWAY INSIDER GAZETTE
-            </div>
-            <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none">
-              Creative Industry Journal
-            </h2>
-            <p className="text-sm text-neutral-500 leading-relaxed font-medium">
-              Vetted tips, professional guide briefs, and industry guidelines compiled by international casting directors and executive model scouts.
-            </p>
-          </div>
- 
-          {/* Interactive Categories Bar */}
-          <div className="flex flex-wrap items-center gap-2 bg-neutral-100/80 p-1.5 rounded-2xl border border-neutral-250/30">
-            {categories.map((cat) => {
-              const isSelected = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`relative px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                    isSelected 
-                      ? 'bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white shadow-md' 
-                      : 'text-neutral-500 hover:text-[#3835A4]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
+        <div className="max-w-2xl mb-12">
+          <h2 className="font-display text-3xl font-black text-neutral-900 sm:text-5xl tracking-tight leading-none mb-4">
+            Creative Industry Journal
+          </h2>
+          <p className="text-sm text-neutral-500 leading-relaxed font-medium">
+            Vetted tips, professional guide briefs, and industry guidelines compiled by international casting directors and executive model scouts.
+          </p>
+        </div>
+
+        {/* Interactive Categories Bar - Placed Directly Above the Blogs */}
+        <div className="flex flex-wrap items-center gap-2 bg-neutral-100/80 p-1.5 rounded-2xl border border-neutral-250/30 w-fit mb-10">
+          {categories.map((cat) => {
+            const isSelected = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`relative px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                  isSelected 
+                    ? 'bg-gradient-to-r from-[#C6007E] to-[#3835A4] text-white shadow-md' 
+                    : 'text-neutral-500 hover:text-[#3835A4]'
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
         {/* Dynamic Blog Grid */}
@@ -212,4 +206,3 @@ export default function BlogsSection() {
     </div>
   );
 }
-
